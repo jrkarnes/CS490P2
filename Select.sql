@@ -1,0 +1,16 @@
+-- Select Names of all Authors who wrote books published
+-- in 2002
+
+SELECT * FROM AUTHOR
+INNER JOIN AUTHORSHIP ON AUTHOR.ID = AUTHORSHIP.AUTHOR_ID
+INNER JOIN BOOK ON BOOK.ISBN = AUTHORSHIP.BOOK_ID
+WHERE BOOK.YEARISSUED = 2002
+GROUP BY AUTHOR.NAME;
+
+-- Return the number of copies for each book
+-- Order doesn't matter
+
+SELECT COUNT(*) AS "Number of Copies"
+FROM COPY
+INNER JOIN BOOK ON COPY.COPYID = BOOK.ISBN
+GROUP BY BOOK.ISBN
