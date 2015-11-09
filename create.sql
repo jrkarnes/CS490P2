@@ -23,7 +23,7 @@ FOREIGN KEY(Book_ID) REFERENCES Book(ISBN)
 CREATE TABLE Authorship(
 ID int not null AUTO_INCREMENT,
 Book_ID varchar(15),
-Author_ID varchar(10)
+Author_ID varchar(10),
 Main boolean,
 PRIMARY KEY(ID),
 FOREIGN KEY(Book_ID) REFERENCES Book(ISBN),
@@ -33,7 +33,7 @@ FOREIGN KEY(Author_ID) REFERENCES Author(ID)
 CREATE TABLE Member(
 ID int not null auto_increment,
 MemberName varchar(250),
-Gender ENUM{'1','2'},
+Gender ENUM('1','2'),
 email varchar(250),
 PRIMARY KEY(ID)
 );
@@ -44,7 +44,7 @@ copyID varchar(10),
 memberID int,
 borrowDate Date,
 returnDate Date,
-status ENUM{'1','2','3',},
+status ENUM('1','2','3'),
 PRIMARY KEY(ID),
 FOREIGN KEY(copyID) REFERENCES Copy(barCode),
 FOREIGN KEY(memberID) REFERENCES Member(ID)
