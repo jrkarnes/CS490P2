@@ -1,3 +1,5 @@
+-- I see it now. Thanks Christian!
+
 CREATE TABLE Author(
 ID varchar(10),
 AuthorName VARCHAR(250) NOT NULL,
